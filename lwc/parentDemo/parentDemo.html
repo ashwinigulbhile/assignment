@@ -1,0 +1,21 @@
+<template>
+    <div class="slds-grid maindiv">
+        <div class="slds-col maindiv">
+            <lightning-input name="AccountName" label="Enter a Account Name" onchange={handleInput}></lightning-input>
+            <lightning-input type="numder" name="noOfAccount" label="Records#" onchange={handleInput}></lightning-input><br/>
+            <lightning-button variant="brand" label="Search" onclick={handleSearch} class="slds-m-left_x-small"></lightning-button><br/>
+        </div>
+        <div class="slds-col maindiv">
+            
+            <lightning-input name="searchText" label="Account Name" onchange={handleInput}></lightning-input><br/>
+            <template if:true={copyOfmyaccount}>
+                 <template for:each={copyOfmyaccount} for:item="acc">
+                  <c-child-demo account={acc} key={acc.Id}></c-child-demo>
+                 </template>
+         
+            </template>
+        </div>
+    </div>
+
+    
+</template>
